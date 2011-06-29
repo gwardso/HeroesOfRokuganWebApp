@@ -1,0 +1,109 @@
+.main
+{
+    margin: 0;
+	background-color: #222222;
+}
+
+.mainDiv
+{
+	width: 1000px;
+	border-width: 0 2px 0 2px;
+	border-color: #BBBBBB;
+	border-style:solid;
+	margin: 0 auto;
+}
+
+.mainDiv2
+{
+	border-width: 0 3px 0 3px;
+	border-color: #888888;
+	border-style: solid;
+}
+
+.header
+{
+    background-color: #C3BAA8;
+}
+
+.pageIdentity
+{
+	float: left;
+	width: 751px;
+	height: 150px;
+	background-image: url("/layout/images/Header2.png");
+}
+
+.identityLink
+{
+	margin-top: 4.5em;
+	margin-left: 1.2em;
+}
+
+.identityLink a
+{
+	color: #787878;
+	font: italic small-caps normal 36px cursive;
+	text-decoration: none;
+}
+
+.userLinks
+{
+	margin-left: 751px;
+	margin-right: 1em;
+	text-align: right;
+}
+
+.navRibbon
+{
+	clear: both;
+	background-image: url("/layout/images/NavRibbonBg.png");
+	height: 30px;
+}
+
+.navLink
+{
+	height: 100%;
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-image: url("/layout/images/NavRibbonBg.png");
+}
+
+.navLink span
+{
+	top: 0.4em;
+	position: relative;
+}
+
+.navLink a
+{
+	color: #000000;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-decoration: none;
+}
+
+.navHover
+{
+	background-image: none;
+	background-image: url("/layout/images/NavRibbonBgHover.png");
+}
+
+.navHover a
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+.median
+{
+	background-color: #EDEDED;
+	height: 100%;
+	margin: auto;
+}
+
+.pageContent
+{
+	padding: 1em;
+}
+
