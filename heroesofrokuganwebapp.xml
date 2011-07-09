@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="heroesofrokuganwebapp" default="all">
+  
+  
+  <property file="heroesofrokuganwebapp.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/*.lib/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/.bundle/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.ear"/>
+    <include name="*.zip"/>
+    <include name="*.swc"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <include name="**/?*.properties"/>
+    <include name="**/?*.xml"/>
+    <include name="**/?*.gif"/>
+    <include name="**/?*.png"/>
+    <include name="**/?*.jpeg"/>
+    <include name="**/?*.jpg"/>
+    <include name="**/?*.html"/>
+    <include name="**/?*.dtd"/>
+    <include name="**/?*.tld"/>
+    <include name="**/?*.ftl"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.6" value="${jdk.home.1.6}/bin"/>
+  <path id="jdk.classpath.1.6">
+    <fileset dir="${jdk.home.1.6}">
+      <include name="jre/lib/alt-rt.jar"/>
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.6}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.6}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.6"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.appengine_api.classpath">
+    <fileset dir="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="library.appengine_orm.classpath">
+    <fileset dir="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/orm">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="library.java_ee6.classpath">
+    <pathelement location="${basedir}/lib/javax.annotation.jar"/>
+    <pathelement location="${basedir}/lib/javax.ejb.jar"/>
+    <pathelement location="${basedir}/lib/javax.jms.jar"/>
+    <pathelement location="${basedir}/lib/javax.persistence.jar"/>
+    <pathelement location="${basedir}/lib/javax.resource.jar"/>
+    <pathelement location="${basedir}/lib/javax.servlet.jar"/>
+    <pathelement location="${basedir}/lib/javax.servlet.jsp.jar"/>
+    <pathelement location="${basedir}/lib/javax.servlet.jsp.jstl.jar"/>
+    <pathelement location="${basedir}/lib/javax.transaction.jar"/>
+  </path>
+  
+  <path id="library.stripes.classpath">
+    <pathelement location="C:/Program Files/Java/Libraries/log4j/log4j-1.2.16.jar"/>
+    <pathelement location="C:/Program Files/Java/Libraries/stripes/commons-logging.jar"/>
+    <pathelement location="C:/Program Files/Java/Libraries/stripes/cos.jar"/>
+    <pathelement location="C:/Program Files/Java/Libraries/stripes/stripes.jar"/>
+  </path>
+  
+  
+  <!-- Application Server Libraries -->
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module HeroesOfRokuganWebApp -->
+  
+  <dirname property="module.heroesofrokuganwebapp.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.heroesofrokuganwebapp" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.heroesofrokuganwebapp" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.heroesofrokuganwebapp" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.heroesofrokuganwebapp" value="${compiler.args}"/>
+  
+  <property name="heroesofrokuganwebapp.output.dir" value="${module.heroesofrokuganwebapp.basedir}/out/production/HeroesOfRokuganWebApp"/>
+  <property name="heroesofrokuganwebapp.testoutput.dir" value="${module.heroesofrokuganwebapp.basedir}/out/test/HeroesOfRokuganWebApp"/>
+  
+  <path id="heroesofrokuganwebapp.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="heroesofrokuganwebapp.module.production.classpath">
+    <path refid="${module.jdk.classpath.heroesofrokuganwebapp}"/>
+    <path refid="library.appengine_api.classpath"/>
+    <path refid="library.appengine_orm.classpath"/>
+    <path refid="library.stripes.classpath"/>
+    <path refid="library.java_ee6.classpath"/>
+  </path>
+  
+  <path id="heroesofrokuganwebapp.runtime.production.module.classpath">
+    <pathelement location="${heroesofrokuganwebapp.output.dir}"/>
+    <path refid="library.appengine_api.classpath"/>
+    <path refid="library.appengine_orm.classpath"/>
+    <path refid="library.stripes.classpath"/>
+    <path refid="library.java_ee6.classpath"/>
+  </path>
+  
+  <path id="heroesofrokuganwebapp.module.classpath">
+    <path refid="${module.jdk.classpath.heroesofrokuganwebapp}"/>
+    <pathelement location="${heroesofrokuganwebapp.output.dir}"/>
+    <path refid="library.appengine_api.classpath"/>
+    <path refid="library.appengine_orm.classpath"/>
+    <path refid="library.stripes.classpath"/>
+    <path refid="library.java_ee6.classpath"/>
+  </path>
+  
+  <path id="heroesofrokuganwebapp.runtime.module.classpath">
+    <pathelement location="${heroesofrokuganwebapp.testoutput.dir}"/>
+    <pathelement location="${heroesofrokuganwebapp.output.dir}"/>
+    <path refid="library.appengine_api.classpath"/>
+    <path refid="library.appengine_orm.classpath"/>
+    <path refid="library.stripes.classpath"/>
+    <path refid="library.java_ee6.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.heroesofrokuganwebapp">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.heroesofrokuganwebapp">
+    <patternset refid="excluded.from.module.heroesofrokuganwebapp"/>
+  </patternset>
+  
+  <path id="heroesofrokuganwebapp.module.sourcepath">
+    <dirset dir="${module.heroesofrokuganwebapp.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.heroesofrokuganwebapp" depends="compile.module.heroesofrokuganwebapp.production,compile.module.heroesofrokuganwebapp.tests" description="Compile module HeroesOfRokuganWebApp"/>
+  
+  <target name="compile.module.heroesofrokuganwebapp.production" description="Compile module HeroesOfRokuganWebApp; production classes">
+    <mkdir dir="${heroesofrokuganwebapp.output.dir}"/>
+    <javac destdir="${heroesofrokuganwebapp.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.heroesofrokuganwebapp}/javac">
+      <compilerarg line="${compiler.args.heroesofrokuganwebapp}"/>
+      <bootclasspath refid="heroesofrokuganwebapp.module.bootclasspath"/>
+      <classpath refid="heroesofrokuganwebapp.module.production.classpath"/>
+      <src refid="heroesofrokuganwebapp.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.heroesofrokuganwebapp"/>
+    </javac>
+    
+    <copy todir="${heroesofrokuganwebapp.output.dir}">
+      <fileset dir="${module.heroesofrokuganwebapp.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.heroesofrokuganwebapp.tests" depends="compile.module.heroesofrokuganwebapp.production" description="compile module HeroesOfRokuganWebApp; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.heroesofrokuganwebapp" description="cleanup module">
+    <delete dir="${heroesofrokuganwebapp.output.dir}"/>
+    <delete dir="${heroesofrokuganwebapp.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.heroesofrokuganwebapp, clean.artifact.hor:war-exploded" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.heroesofrokuganwebapp" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.hor" value="${basedir}/out/artifacts/HoR"/>
+    <property name="artifact.output.hor:war-exploded" value="${basedir}/out/artifacts/HoR_war_exploded"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.HoR.war" value="${artifacts.temp.dir}/HoR.war"/>
+  </target>
+  
+  <target name="clean.artifact.hor:war-exploded" description="clean HoR:war-exploded artifact output">
+    <delete dir="${artifact.output.hor:war-exploded}"/>
+  </target>
+  
+  <target name="artifact.hor" depends="init.artifacts, artifact.hor:war-exploded" description="Build &apos;HoR&apos; artifact">
+    <property name="artifact.temp.output.hor" value="${artifacts.temp.dir}/HoR"/>
+    <mkdir dir="${artifact.temp.output.hor}"/>
+    <zip destfile="${temp.jar.path.HoR.war}">
+      <zipfileset dir="${artifact.output.hor:war-exploded}"/>
+    </zip>
+    <copy file="${temp.jar.path.HoR.war}" tofile="${artifact.temp.output.hor}/HoR.war"/>
+  </target>
+  
+  <target name="artifact.hor:war-exploded" depends="init.artifacts, compile.module.heroesofrokuganwebapp" description="Build &apos;HoR:war-exploded&apos; artifact">
+    <mkdir dir="${artifact.output.hor:war-exploded}"/>
+    <copy todir="${artifact.output.hor:war-exploded}">
+      <fileset dir="${basedir}/web"/>
+    </copy>
+    <mkdir dir="${artifact.output.hor:war-exploded}/WEB-INF"/>
+    <copy file="${basedir}/web/WEB-INF/web.xml" tofile="${artifact.output.hor:war-exploded}/WEB-INF/web.xml"/>
+    <mkdir dir="${artifact.output.hor:war-exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.hor:war-exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.hor:war-exploded}/WEB-INF/classes">
+      <fileset dir="${heroesofrokuganwebapp.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.output.hor:war-exploded}/WEB-INF/lib"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/appengine-api-1.0-sdk-1.5.1.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/appengine-api-1.0-sdk-1.5.1.jar"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/appengine-api-labs-1.5.1.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/appengine-api-labs-1.5.1.jar"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/appengine-jsr107cache-1.5.1.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/appengine-jsr107cache-1.5.1.jar"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/jsr107cache-1.1.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/jsr107cache-1.1.jar"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/orm/datanucleus-appengine-1.0.9.final.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/datanucleus-appengine-1.0.9.final.jar"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/orm/datanucleus-core-1.1.5.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/datanucleus-core-1.1.5.jar"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/orm/datanucleus-jpa-1.1.5.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/datanucleus-jpa-1.1.5.jar"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/orm/geronimo-jpa_3.0_spec-1.1.1.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/geronimo-jpa_3.0_spec-1.1.1.jar"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/orm/geronimo-jta_1.1_spec-1.1.1.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/geronimo-jta_1.1_spec-1.1.1.jar"/>
+    <copy file="C:/Program Files/Java/appengine-java-sdk-1.5.1/lib/user/orm/jdo2-api-2.3-eb.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/jdo2-api-2.3-eb.jar"/>
+    <copy file="C:/Program Files/Java/Libraries/stripes/cos.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/cos.jar"/>
+    <copy file="C:/Program Files/Java/Libraries/log4j/log4j-1.2.16.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/log4j-1.2.16.jar"/>
+    <copy file="C:/Program Files/Java/Libraries/stripes/stripes.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/stripes.jar"/>
+    <copy file="C:/Program Files/Java/Libraries/stripes/commons-logging.jar" tofile="${artifact.output.hor:war-exploded}/WEB-INF/lib/commons-logging.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.hor, artifact.hor:war-exploded" description="Build all artifacts">
+    <mkdir dir="${artifact.output.hor}"/>
+    <copy todir="${artifact.output.hor}">
+      <fileset dir="${artifact.temp.output.hor}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
