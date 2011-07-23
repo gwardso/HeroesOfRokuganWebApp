@@ -15,8 +15,12 @@
 			<param-value>com.wardso.HeroesOfRokugan.action</param-value>
         </init-param>
         <init-param>
+		    <param-name>ActionBeanContext.Class</param-name>
+		    <param-value>com.wardso.stripes.extensions.HoRActionBeanContext</param-value>
+		</init-param>
+        <init-param>
             <param-name>MultipartWrapper.Class</param-name>
-			<param-value>com.wardso.HeroesOfRokugan.exclude.EmptyMultipartWrapper</param-value>
+            <param-value>com.wardso.HeroesOfRokugan.exclude.EmptyMultipartWrapper</param-value>
         </init-param>
     </filter>
 
@@ -41,6 +45,21 @@
         <servlet-class>net.sourceforge.stripes.controller.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StripesDispatcher</servlet-name>
+        <url-pattern>/dispatcher</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StripesDispatcher</servlet-name>
+        <url-pattern>/action/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>StripesDispatcher</servlet-name>
+        <url-pattern>/_ah/*.action</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>StripesDispatcher</servlet-name>

@@ -41,7 +41,7 @@
 
 .identityLink a
 {
-	color: #787878;
+	color: #FFFFFF;
 	font: italic small-caps normal 36px cursive;
 	text-decoration: none;
 }
@@ -85,7 +85,6 @@
 
 .navHover
 {
-	background-image: none;
 	background-image: url("/layout/images/NavRibbonBgHover.png");
 }
 

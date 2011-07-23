@@ -1,7 +1,9 @@
 package com.wardso.HeroesOfRokugan.action;
 
-import com.wardso.HeroesOfRokugan.model.Person;
-import net.sourceforge.stripes.action.*;
+import com.wardso.stripes.extensions.HoRActionBean;
+import net.sourceforge.stripes.action.DefaultHandler;
+import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.Resolution;
 import net.sourceforge.stripes.validation.Validate;
 import net.sourceforge.stripes.validation.ValidateNestedProperties;
 
@@ -12,27 +14,16 @@ import net.sourceforge.stripes.validation.ValidateNestedProperties;
  * Time: 6:55 PM
  * To change this template use File | Settings | File Templates.
  */
-public class HomeAction implements ActionBean {
+public class HomeAction extends HoRActionBean {
   @ValidateNestedProperties({
     @Validate(field = "firstName", required = true,
               on = {"hello"}),
     @Validate(field = "lastName", required = true,
               on = {"hello"})
   })
-  private Person person;
-  private ActionBeanContext context;
 
   @DefaultHandler 
   public Resolution index() {
-    return new ForwardResolution("index.jsp");
+    return new ForwardResolution("/WEB-INF/jsp/index.jsp");
   }
-
-  public Resolution hello() {
-    return new ForwardResolution("Echo.jsp");
-  }
-
-  public void setPerson(Person person) {this.person = person;}
-  public Person getPerson() { return person;}
-  public void setContext(ActionBeanContext c) {this.context = c; }
-  public ActionBeanContext getContext() {return context; }
 }

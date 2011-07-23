@@ -3,8 +3,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AppEngine API"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AppEngine ORM"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Stripes"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Java EE6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AppEngine ORM"/>
 	<classpathentry kind="output" path="out/production/HeroesOfRokuganWebApp"/>
 </classpath>
